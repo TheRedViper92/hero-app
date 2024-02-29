@@ -8,8 +8,8 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
+import pl.spartancode.heroapidto.hero.Hero;
 import pl.spartancode.heroapp.hero.GetHeroService;
-import pl.spartancode.heroapp.hero.HeroDto.Hero;
 import pl.spartancode.heroapp.hero.MessageCreator;
 
 @Route
@@ -45,7 +45,7 @@ public class HelloWorld extends VerticalLayout {
     }
 
     private void getNeedAHeroButtonClickListener(ClickEvent<Button> event) {
-        Hero anyHero = getHeroService.getAnyHero();
+        pl.spartancode.heroapidto.hero.Hero anyHero = getHeroService.getAnyHero();
         getHeroService.levelUpHero(anyHero);
         String message = messageCreator.createMessage(anyHero);
         Notification notification = new Notification(message);

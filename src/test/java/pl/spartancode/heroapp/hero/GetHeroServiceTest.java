@@ -9,7 +9,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.web.reactive.function.client.WebClient;
-import pl.spartancode.heroapp.hero.HeroDto.Hero;
+import pl.spartancode.heroapidto.hero.Hero;
 import reactor.core.publisher.Mono;
 
 @ExtendWith(MockitoExtension.class)
@@ -38,7 +38,7 @@ class GetHeroServiceTest {
         when(heroWebClientApi.get()).thenReturn(requestHeadersUriSpec);
         when(requestHeadersUriSpec.uri("/api/v1/hero/any")).thenReturn(requestHeadersSpec);
         when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
-        Hero testHero = new Hero("Terminator", "0");
+        Hero testHero = new Hero("Terminator", 0);
         when(responseSpec.bodyToMono(Hero.class)).thenReturn(Mono.just(testHero));
 
         //when
@@ -53,10 +53,10 @@ class GetHeroServiceTest {
         when(heroWebClientApi.get()).thenReturn(requestHeadersUriSpec);
         when(requestHeadersUriSpec.uri("/api/v1/hero/Terminator")).thenReturn(requestHeadersSpec);
         when(requestHeadersSpec.retrieve()).thenReturn(responseSpec);
-        Hero testHero = new Hero("Terminator", "0");
+        Hero testHero = new Hero("Terminator", 0);
         when(responseSpec.bodyToMono(Hero.class)).thenReturn(Mono.just(testHero));
         //when
-        Hero anyHero = getHeroService.getHero("Terminator");
+        pl.spartancode.heroapidto.hero.Hero anyHero = getHeroService.getHero("Terminator");
         //then
         Assertions.assertThat(anyHero).isEqualTo(testHero);
     }

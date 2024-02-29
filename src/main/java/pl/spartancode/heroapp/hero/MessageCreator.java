@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
-import pl.spartancode.heroapp.hero.HeroDto.Hero;
+import pl.spartancode.heroapidto.hero.Hero;
 
 @Service
 public class MessageCreator {
@@ -20,7 +20,7 @@ public class MessageCreator {
             return "No more heroes :(";
         }
 
-        return String.format("Hero %s, on lv. %s joins ze battle", hero.name(), hero.level());
+        return String.format("Hero %s, on lv. %s joins ze battle", hero.getName(), hero.getLevel());
     }
 
     private Hero jsonToHero(String heroJson) {

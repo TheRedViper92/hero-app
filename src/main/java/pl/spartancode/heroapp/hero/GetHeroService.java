@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
-import pl.spartancode.heroapp.hero.HeroDto.Hero;
+import pl.spartancode.heroapidto.hero.Hero;
 
 @Service
 public class GetHeroService {
@@ -35,11 +35,11 @@ public class GetHeroService {
     }
 
     public void levelUpHero(Hero hero) {
-        log.info("sending request to level up hero: " + hero.name());
+        log.info("sending request to level up hero: " + hero.getLevel());
         heroApiWebClient
             .post()
             .uri(URI.create("/api/v1/hero/lvup"))
-            .body(BodyInserters.fromValue(hero.name()))
+            .body(BodyInserters.fromValue(hero.getName()))
             .retrieve();
     }
 }
