@@ -1,4 +1,4 @@
-package pl.spartancode.contracttestconsumer.hero;
+package pl.spartancode.heroapp.hero;
 
 import static org.mockito.Mockito.when;
 
@@ -9,7 +9,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.web.reactive.function.client.WebClient;
-import pl.spartancode.contracttestconsumer.hero.HeroDto.Hero;
+import pl.spartancode.heroapp.hero.HeroDto.Hero;
 import reactor.core.publisher.Mono;
 
 @ExtendWith(MockitoExtension.class)

@@ -1,4 +1,4 @@
-package pl.spartancode.contracttestconsumer.hero;
+package pl.spartancode.heroapp.hero;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

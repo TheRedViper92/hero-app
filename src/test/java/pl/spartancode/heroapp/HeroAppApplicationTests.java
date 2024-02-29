@@ -1,10 +1,10 @@
-package pl.spartancode.contracttestconsumer;
+package pl.spartancode.heroapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ContractTestConsumerApplicationTests {
+class HeroAppApplicationTests {
 
     @Test
     void contextLoads() {

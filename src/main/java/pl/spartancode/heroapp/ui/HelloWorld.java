@@ -1,4 +1,4 @@
-package pl.spartancode.contracttestconsumer.ui;
+package pl.spartancode.heroapp.ui;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
@@ -8,9 +8,9 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
-import pl.spartancode.contracttestconsumer.hero.GetHeroService;
-import pl.spartancode.contracttestconsumer.hero.HeroDto.Hero;
-import pl.spartancode.contracttestconsumer.hero.MessageCreator;
+import pl.spartancode.heroapp.hero.GetHeroService;
+import pl.spartancode.heroapp.hero.HeroDto.Hero;
+import pl.spartancode.heroapp.hero.MessageCreator;
 
 @Route
 public class HelloWorld extends VerticalLayout {

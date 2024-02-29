@@ -1,11 +1,10 @@
-package pl.spartancode.contracttestconsumer.hero;
+package pl.spartancode.heroapp.hero;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.net.http.HttpResponse;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
-import pl.spartancode.contracttestconsumer.hero.HeroDto.Hero;
+import pl.spartancode.heroapp.hero.HeroDto.Hero;
 
 @Service
 public class MessageCreator {

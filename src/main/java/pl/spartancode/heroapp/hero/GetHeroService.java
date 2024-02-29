@@ -1,16 +1,12 @@
-package pl.spartancode.contracttestconsumer.hero;
+package pl.spartancode.heroapp.hero;
 
 import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpRequest.BodyPublishers;
-import java.net.http.HttpResponse.BodyHandlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
-import pl.spartancode.contracttestconsumer.hero.HeroDto.Hero;
+import pl.spartancode.heroapp.hero.HeroDto.Hero;
 
 @Service
 public class GetHeroService {
