@@ -12,14 +12,14 @@ import pl.spartancode.heroapidto.hero.Hero;
 import pl.spartancode.heroapp.hero.GetHeroService;
 import pl.spartancode.heroapp.hero.MessageCreator;
 
-@Route
-public class HelloWorld extends VerticalLayout {
+@Route("hero/search")
+public class HeroSearch extends VerticalLayout {
     private GetHeroService getHeroService;
     private MessageCreator messageCreator;
 
     private final TextField heroSearch;
 
-    public HelloWorld(GetHeroService getHeroService, MessageCreator messageCreator) {
+    public HeroSearch(GetHeroService getHeroService, MessageCreator messageCreator) {
         this.getHeroService = getHeroService;
         this.messageCreator = messageCreator;
 
