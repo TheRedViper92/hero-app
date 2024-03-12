@@ -14,6 +14,7 @@ public class HeroApiWebClientConfig {
     public WebClient heroApiWebClient() {
         return WebClient.builder()
             .baseUrl(heroApiUrl)
+            .defaultHeader("Accept", "application/json")
             .build();
     }
 }

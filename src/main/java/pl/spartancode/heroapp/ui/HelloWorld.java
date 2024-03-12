@@ -45,8 +45,10 @@ public class HelloWorld extends VerticalLayout {
     }
 
     private void getNeedAHeroButtonClickListener(ClickEvent<Button> event) {
-        pl.spartancode.heroapidto.hero.Hero anyHero = getHeroService.getAnyHero();
-        getHeroService.levelUpHero(anyHero);
+        Hero anyHero = getHeroService.getAnyHero();
+        if (anyHero != null) {
+            getHeroService.levelUpHero(anyHero);
+        }
         String message = messageCreator.createMessage(anyHero);
         Notification notification = new Notification(message);
         notification.setPosition(Position.BOTTOM_END);
@@ -63,7 +65,11 @@ public class HelloWorld extends VerticalLayout {
         String heroName = heroSearch.getValue();
         heroSearch.clear();
         Hero hero = getHeroService.getHero(heroName);
-        getHeroService.levelUpHero(hero);
+
+        if (hero != null) {
+            getHeroService.levelUpHero(hero);
+        }
+
         String message = messageCreator.createMessage(hero);
         notification.setText(message);
         notification.setPosition(Position.BOTTOM_END);
