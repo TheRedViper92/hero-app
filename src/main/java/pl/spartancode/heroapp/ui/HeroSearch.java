@@ -7,15 +7,17 @@ import com.vaadin.flow.component.notification.Notification.Position;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import pl.spartancode.heroapidto.hero.Hero;
 import pl.spartancode.heroapp.hero.GetHeroService;
 import pl.spartancode.heroapp.hero.MessageCreator;
 
-@Route("hero/search")
+@Route(value = "hero/search", layout = MainLayout.class)
+@PageTitle("Hero Search")
 public class HeroSearch extends VerticalLayout {
-    private GetHeroService getHeroService;
-    private MessageCreator messageCreator;
+    private final GetHeroService getHeroService;
+    private final MessageCreator messageCreator;
 
     private final TextField heroSearch;
 
