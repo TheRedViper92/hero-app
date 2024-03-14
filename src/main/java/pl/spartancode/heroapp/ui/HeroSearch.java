@@ -40,23 +40,6 @@ public class HeroSearch extends VerticalLayout {
 
         horizontalLayout.setVerticalComponentAlignment(Alignment.END, heroSearch, heroSearchButton);
         add(horizontalLayout);
-
-        Button needAHeroButton = new Button("I need a hero!");
-        needAHeroButton.addClickListener(this::getNeedAHeroButtonClickListener);
-        add(needAHeroButton);
-    }
-
-    private void getNeedAHeroButtonClickListener(ClickEvent<Button> event) {
-        Hero anyHero = getHeroService.getAnyHero();
-        if (anyHero != null) {
-            getHeroService.levelUpHero(anyHero);
-        }
-        String message = messageCreator.createMessage(anyHero);
-        Notification notification = new Notification(message);
-        notification.setPosition(Position.BOTTOM_END);
-        notification.setDuration(3000);
-        notification.addThemeName("success");
-        notification.open();
     }
 
     private void getHeroSearchButtonClickListener(ClickEvent<Button> event) {
