@@ -1,7 +1,10 @@
 package pl.spartancode.heroapp.ui;
 
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.Anchor;
+import com.vaadin.flow.component.html.AnchorTarget;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import java.util.List;
@@ -28,6 +31,11 @@ public class HeroBrowser extends VerticalLayout {
         grid.setHeightFull();
         grid.addColumn(Hero::getName).setHeader("Hero Name").setSortable(true);
         grid.addColumn(Hero::getLevel).setHeader("Level").setSortable(true);
+        grid.addColumn(new ComponentRenderer<>(item -> {
+            Anchor link = new Anchor("hero/id/" + item.getId(), "Details");
+            link.setTarget(AnchorTarget.BLANK);
+            return link;
+        }));
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
         return grid;
     }
